@@ -37,6 +37,26 @@ The thesis introduces:
 
 ### Reaction and Behavior Metrics:
 ```text
-• Relative Velocity: v_rel = v_ego - v_lead
-• Time-To-Collision (TTC) = d_rel / v_rel
-• Acceleration Profile: a(t) over maneuver window
+### Relative Velocity
+\[
+v_{\text{rel}} = v_{\text{ego}} - v_{\text{lead}}
+\]
+
+### Time-To-Collision (TTC)
+\[
+TTC = \frac{d_{\text{rel}}}{v_{\text{rel}}}
+\]
+
+### Jerk (rate of change of acceleration)
+\[
+j(t) = \frac{da(t)}{dt}
+\]
+
+### Performance Score
+\[
+S = \alpha \cdot E_{\text{TTC}} + \beta \cdot E_{\text{gap}} + \gamma \cdot J_{\text{max}}
+\]
+Where:
+- \( \alpha, \beta, \gamma \) = weights for tuning
+- \( E_{\text{TTC}} \) = error in time-to-collision vs reference
+- \( J_{\text{max}} \) = peak jerk value
